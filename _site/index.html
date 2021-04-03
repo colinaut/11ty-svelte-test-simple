@@ -1,0 +1,40 @@
+<!DOCTYPE html><html lang="en"><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Embedded Svelte Components!</title>
+		<style>
+			* {
+				font-family: Arial, Helvetica, sans-serif;
+				line-height: 1.2em;
+			}
+			body {
+				max-width: 90ch;
+				margin: 0 auto;
+				padding: 10px 10px 30px;
+			}
+			code {
+				font-family: 'Courier New', Courier, monospace;
+				background-color: rgb(230, 230, 230);
+				padding: 2px;
+			}
+			li {
+				font-size: 1.2rem;
+				margin-bottom: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main><h1>Embedded Component Examples</h1>
+<h3>Here's an embedded component (<code>Greeter.svelte</code>)</h3>
+<div id="svelte-embed-00"></div>
+<hr>
+<h2><em>Interesting notes on the output code</em></h2>
+<ul>
+<li>Although the same component is embedded here twice (<code>Greeter.svelte</code>), the component's source code is only generated <em>once</em> (as is necessary).</li>
+<li>Two Svelte components exist on this page, but the Svelte utility code exists <em>only once</em>. This is because all Svelte code for a single page is built in a <strong>single</strong> Rollup build, which allows Rollup to properly de-dupe and tree-shake the code. No unnecessary code bloating up the page.</li>
+</ul>
+</main>
+	
+
+<script>var EmbedSvelte=function(e,t){"use strict";function n(e){let n,a,p,s,d,l,o,i,r,u,m,c,v,x=(e[1]||"(what's your last name?)")+"";return{c(){n=t.element("div"),a=t.element("h1"),p=t.text("Nice to meet you "),s=t.text(e[0]),d=t.space(),l=t.text(x),o=t.text("!"),i=t.space(),r=t.element("label"),r.textContent="My last name is:",u=t.space(),m=t.element("input"),t.attr(r,"for","lastname"),t.attr(m,"id","lastname"),t.attr(m,"type","text"),t.attr(n,"class","svelte-qzzqfh")},m(x,h){t.insert(x,n,h),t.append(n,a),t.append(a,p),t.append(a,s),t.append(a,d),t.append(a,l),t.append(a,o),t.append(n,i),t.append(n,r),t.append(n,u),t.append(n,m),t.set_input_value(m,e[1]),c||(v=t.listen(m,"input",e[2]),c=!0)},p(e,[n]){1&n&&t.set_data(s,e[0]),2&n&&x!==(x=(e[1]||"(what's your last name?)")+"")&&t.set_data(l,x),2&n&&m.value!==e[1]&&t.set_input_value(m,e[1])},i:t.noop,o:t.noop,d(e){e&&t.detach(n),c=!1,v()}}}function a(e,t,n){let{name:a}=t,p="";return e.$$set=e=>{"name"in e&&n(0,a=e.name)},[a,p,function(){p=this.value,n(1,p)}]}class p extends t.SvelteComponent{constructor(e){var p;super(),document.getElementById("svelte-qzzqfh-style")||((p=t.element("style")).id="svelte-qzzqfh-style",p.textContent="div.svelte-qzzqfh{padding:1em;margin-bottom:1em;border:1px solid darkcyan;width:fit-content;box-shadow:0 8px 6px -6px darkcyan;border-radius:5px}",t.append(document.head,p)),t.init(this,e,a,n,t.safe_not_equal,{name:0})}}return e.Component0=p,Object.defineProperty(e,"__esModule",{value:!0}),e}({},internal);
+</script><script>new EmbedSvelte.Component0({ target: document.getElementById('svelte-embed-00'), props: {"name":"Zach"} });</script></body></html>
